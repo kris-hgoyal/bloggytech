@@ -169,17 +169,6 @@ CLOUDINARY_API_SECRET=
 
 ---
 
-## 📸 Screenshots
-
-Add screenshots of:
-
-- Home Page
-- Create Post Page
-- Post Details Page
-- User Profile
-- Authentication Pages
-
----
 
 ## 🎯 Future Improvements
 
