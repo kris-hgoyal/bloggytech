@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutAction } from "../../redux/slices/users/userSlices";
@@ -9,6 +9,8 @@ export default function PrivateNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
 
+  const navigate = useNavigate();
+  
   const dispatch = useDispatch();
 
   const { userAuth } = useSelector((state) => state?.users);
@@ -16,7 +18,7 @@ export default function PrivateNavbar() {
 
   const logoutHandler = () => {
     dispatch(logoutAction());
-    window.location.reload();
+    navigate("/");
   };
 
   return (
