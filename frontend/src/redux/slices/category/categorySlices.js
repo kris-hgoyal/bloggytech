@@ -1,7 +1,7 @@
 import {createAsyncThunk , createSlice} from '@reduxjs/toolkit'
 import axios from "axios";
 import { resetErrorAction, resetSuccessAction } from '../globalSlice/globalSlices';
-
+import API_URL from '../../../config';
 const INITIAL_STATE  ={
     loading:false,
     error:null,
@@ -14,7 +14,7 @@ const INITIAL_STATE  ={
 export const fetchCategoriesAction = createAsyncThunk("categories/list", async(payload,{rejectWithValue,getState,dispatch})=>{
     //make request
     try{
-        const {data} = await axios.get("http://localhost:3000/api/v1/categories")
+        const {data} = await axios.get(`${API_URL}/categories`)
         return data;
     }
     catch(error){

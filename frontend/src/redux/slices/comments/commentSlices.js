@@ -5,6 +5,7 @@ import {
   resetErrorAction,
   resetSuccessAction,
 } from "../globalSlice/globalSlices";
+import API_URL from "../../../config";
 
 //initialstate
 const INITIAL_STATE = {
@@ -27,7 +28,7 @@ export const createCommentAction = createAsyncThunk(
         },
       };
       const { data } = await axios.post(
-        `http://localhost:3000/api/v1/comments/${payload?.postId}`,
+        `${API_URL}/comments/${payload?.postId}`,
         {
           message: payload?.message,
         },
